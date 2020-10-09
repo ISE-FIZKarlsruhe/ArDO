@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Ontology Browser</title>
+<meta http-equiv='content-type' content='text/html;charset=UTF-8'>
+<link rel='stylesheet' href='../css/default.css' type='text/css' />
+</head>
+
+<body>
+
+<div id='tabs'>
+<a href='index.html' class='' >Ontologies</a>
+<a href='../classes/index.html' class='' >Classes</a>
+<a href='../objectproperties/index.html' class='' >Object Properties</a>
+<a href='../dataproperties/index.html' class='' >Data Properties</a>
+<a href='../annotationproperties/index.html' class='' >Annotation Properties</a>
+<a href='../individuals/index.html' class='' >Individuals</a>
+<a href='../datatypes/index.html' class='' >Datatypes</a>
+<a href='../cloud/' class='' >Clouds</a>
+</div> <!-- tabs -->
+
+
+<div class='summary'><h2>pav</h2>
+<h3>http://purl.org/pav/<br />http://purl.org/pav/2.3</h3>
+<h3>Loaded from http://purl.org/pav/2.3</h3>
+
+<div id='annotations_(35)'>
+<h4>Annotations (35)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="../annotationproperties/contributor___1944284134.html" class='Annotation Property' title="http://purl.org/dc/elements/1.1/contributor">dc:contributor</a> <span class='literal'>"Alasdair J G Gray"</span>(<a href="../datatypes/string___799955032.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>)</li>
+<li class="asserted"><a href="../annotationproperties/contributor___1944284134.html" class='Annotation Property' title="http://purl.org/dc/elements/1.1/contributor">dc:contributor</a> <span class='literal'>"Khalid Belhajjame"</span>(<a href="../datatypes/string___799955032.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>)</li>
+<li class="asserted"><a href="../annotationproperties/contributor___1944284134.html" class='Annotation Property' title="http://purl.org/dc/elements/1.1/contributor">dc:contributor</a> <span class='literal'>"Marco Ocana"</span>(<a href="../datatypes/string___799955032.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>)</li>
+<li class="asserted"><a href="../annotationproperties/contributor___1944284134.html" class='Annotation Property' title="http://purl.org/dc/elements/1.1/contributor">dc:contributor</a> <span class='literal'>"Simon Jupp"</span>(<a href="../datatypes/string___799955032.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>)</li>
+<li class="asserted"><a href="../annotationproperties/creator___573147959.html" class='Annotation Property' title="http://purl.org/dc/elements/1.1/creator">dc:creator</a> <span class='literal'>"Paolo Ciccarese"</span>(<a href="../datatypes/string___799955032.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>)</li>
+<li class="asserted"><a href="../annotationproperties/creator___573147959.html" class='Annotation Property' title="http://purl.org/dc/elements/1.1/creator">dc:creator</a> <span class='literal'>"Stian Soiland-Reyes"</span>(<a href="../datatypes/string___799955032.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>)</li>
+<li class="asserted"><a href="../annotationproperties/description___2115014407.html" class='Annotation Property' title="http://purl.org/dc/elements/1.1/description">dc:description</a> http://pav-ontology.googlecode.com/svn/branches/2.3/images/<b>pav-overview.svg</b> 
+<a href='http://pav-ontology.googlecode.com/svn/branches/2.3/images/pav-overview.svg' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fpav-ontology.googlecode.com%2Fsvn%2Fbranches%2F2.3%2Fimages%2Fpav-overview.svg&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/description___2115014407.html" class='Annotation Property' title="http://purl.org/dc/elements/1.1/description">dc:description</a> <span class='literal'>"PAV supplies terms for distinguishing between the different roles of the agents contributing content in current web based systems: contributors, authors, curators and digital artifact creators. The ontology also provides terms for tracking provenance of digital entities that are published on the web and then accessed, transformed and consumed. In order to support broader interoperability, PAV specializes the general purpose W3C PROV provenance model (PROV-O).<br /><br />PAV distinguishes between the data related to the digital artifact - named Provenance - and those related to the actual knowledge creation and therefore to the intellectual property aspects – named Authoring. The Versioning axis describes the evolution of digital entities in time.<br /><br />Using PAV, descriptions can define the authors that originate or gave existence to the work that is expressed in the digital resource (pav:authoredBy); curators (pav:curatedBy) who are content specialists responsible for shaping the expression in an appropriate format, and contributors (super-property pav:contributedBy) that provided some help in conceiving the resource or in the expressed knowledge creation/extraction.<br /><br />These provenance aspects can be detailed with dates using pav:curatedOn, pav:authoredOn, etc. Further details about the creation activities, such as different authors contributing specific parts of the resource at different dates are out of scope for PAV and should be defined using vocabularies like PROV-O and additional intermediate entities to describe the different states.<br /><br />For resources based on other resources, PAV allows specification of direct retrieval (pav:retrievedFrom), import through transformations (pav:importedFrom) and sources that were merely consulted (pav:sourceAccessedAt). These aspects can also define the agents responsible using pav:retrievedBy, pav:importedBy and pav:sourceAccessedBy.<br /><br />Version number of a resource can be given with pav:version, the previous version of the resource with pav:previousVersion, and any other earlier versions with pav:hasEarlierVersion. Unversioned, 'mutable' resources can specify their current version as a snapshot resource using pav:hasCurrentVersion and list the earlier versions using pav:hasVersion.<br /><br />The creation of the digital representation (e.g. an RDF graph or a .docx file) can in many cases be different from the authorship of the content/knowledge, and in PAV this digital creation is specified using pav:createdBy, pav:createdWith and pav:createdOn.<br /><br />PAV specializes terms from W3C PROV-O (prov:) and DC Terms (dcterms:), however these ontologies are not OWL imported as PAV can be used independently. The "is defined by" links indicate where those terms are included from. See http://www.w3.org/TR/prov-o and http://dublincore.org/documents/2012/06/14/dcmi-terms/ for more details. See http://purl.org/pav/mapping/dcterms For a comprehensive SKOS mapping to DC Terms.<br /><br />PAV 2 is based on PAV 1.2 but in a different namespace ( http://purl.org/pav/ ). Terms compatible with 1.2 are indicated in this ontology using owl:equivalentProperty.<br /><br />The ontology IRI http://purl.org/pav/ always resolve to the latest version of PAV 2. Particular versionIRIs such as http://purl.org/pav/2.1 can be used by clients to force imports of a particular version - note however that all terms are defined directly in the http://purl.org/pav/ namespace.<br /><br />The goal of PAV is to provide a lightweight, straight forward way to give the essential information about authorship, provenance and versioning, and therefore these properties are described directly on the published resource. As such, PAV does not define any classes or restrict domain/ranges, as all properties are applicable to any online resource.<br /><br />--<br /><br />Copyright 2008-2014 Massachusetts General Hospital; Harvard Medical School; Balboa Systems; University of Manchester<br /><br />Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.  You may obtain a copy of the License at<br /><br />    http://www.apache.org/licenses/LICENSE-2.0<br /><br />Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License.<br />"</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/format___912320135.html" class='Annotation Property' title="http://purl.org/dc/terms/format">dcterms:format</a> <span class='literal'>"application/rdf+xml"</span>(<a href="../datatypes/string___799955032.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>)</li>
+<li class="asserted"><a href="../annotationproperties/issued___1001939259.html" class='Annotation Property' title="http://purl.org/dc/terms/issued">dcterms:issued</a> <span class='literal'>"2014-08-28T15:00:00Z"</span>(<a href="../datatypes/dateTime___-810276894.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a>)</li>
+<li class="asserted"><a href="../annotationproperties/language___567509480.html" class='Annotation Property' title="http://purl.org/dc/terms/language">dcterms:language</a> <span class='literal'>"en"</span>(<a href="../datatypes/language___78351263.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#language">xsd:language</a>)</li>
+<li class="asserted"><a href="../annotationproperties/license___-1947110703.html" class='Annotation Property' title="http://purl.org/dc/terms/license">dcterms:license</a> http://www.apache.org/licenses/<b>LICENSE-2.0</b> 
+<a href='http://www.apache.org/licenses/LICENSE-2.0' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fwww.apache.org%2Flicenses%2FLICENSE-2.0&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/modified___1565585753.html" class='Annotation Property' title="http://purl.org/dc/terms/modified">dcterms:modified</a> <span class='literal'>"2014-08-28T14:41:00Z"</span>(<a href="../datatypes/dateTime___-810276894.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a>)</li>
+<li class="asserted"><a href="../annotationproperties/publisher___-666464116.html" class='Annotation Property' title="http://purl.org/dc/terms/publisher">dcterms:publisher</a> http://www.mindinformatics.org/ 
+<a href='http://www.mindinformatics.org/' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fwww.mindinformatics.org%2F&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/title___-2003496728.html" class='Annotation Property' title="http://purl.org/dc/terms/title">dcterms:title</a> <span class='literal'>"PAV - Provenance, Authoring and Versioning"</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/comment___1501100887.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> <span class='literal'>"PAV is a lightweight ontology for tracking Provenance, Authoring and Versioning. PAV specializes the W3C provenance ontology PROV-O in order to describe authorship, curation and digital creation of online resources.<br /><br />          This ontology describes the defined PAV properties and their usage. Note that PAV does not define any explicit classes or domain/ranges, as every property is meant to be used directly on the described online resource.<br /><br />          Cite as: Paolo Ciccarese, Stian Soiland-Reyes, Khalid Belhajjame, Alasdair JG Gray, Carole Goble, Tim Clark (2013): PAV ontology: provenance, authoring and versioning. Journal of biomedical semantics 4 (1), 37. doi:10.1186/2041-1480-4-37<br />        "</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/label___653429740.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a> <span class='literal'>"Provenance, Authoring and Versioning (PAV)"</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/seeAlso___-1773693006.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a> http://code.google.com/p/pav-ontology/ 
+<a href='http://code.google.com/p/pav-ontology/' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fcode.google.com%2Fp%2Fpav-ontology%2F&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/seeAlso___-1773693006.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a> http://pav-ontology.googlecode.com/svn/trunk/1.2/<b>pav.owl</b> 
+<a href='http://pav-ontology.googlecode.com/svn/trunk/1.2/pav.owl' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fpav-ontology.googlecode.com%2Fsvn%2Ftrunk%2F1.2%2Fpav.owl&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/seeAlso___-1773693006.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a> http://purl.org/pav/<b>doc</b> 
+<a href='http://purl.org/pav/doc' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2Fdoc&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/seeAlso___-1773693006.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a> http://www.w3.org/ns/prov# 
+<a href='http://www.w3.org/ns/prov#' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fwww.w3.org%2Fns%2Fprov%23&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/seeAlso___-1773693006.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a> https://code.google.com/p/pav-ontology/wiki/<b>Versions</b> 
+<a href='https://code.google.com/p/pav-ontology/wiki/Versions' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=https%3A%2F%2Fcode.google.com%2Fp%2Fpav-ontology%2Fwiki%2FVersions&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/backwardCompatibleWith___-2048317559.html" class='Annotation Property' title="http://www.w3.org/2002/07/owl#backwardCompatibleWith">owl:backwardCompatibleWith</a> http://purl.org/pav/2.0/ 
+<a href='http://purl.org/pav/2.0/' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2F2.0%2F&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/backwardCompatibleWith___-2048317559.html" class='Annotation Property' title="http://www.w3.org/2002/07/owl#backwardCompatibleWith">owl:backwardCompatibleWith</a> http://purl.org/pav/2.1 
+<a href='http://purl.org/pav/2.1' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2F2.1&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/backwardCompatibleWith___-2048317559.html" class='Annotation Property' title="http://www.w3.org/2002/07/owl#backwardCompatibleWith">owl:backwardCompatibleWith</a> http://purl.org/pav/2.2 
+<a href='http://purl.org/pav/2.2' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2F2.2&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/backwardCompatibleWith___-2048317559.html" class='Annotation Property' title="http://www.w3.org/2002/07/owl#backwardCompatibleWith">owl:backwardCompatibleWith</a> http://purl.org/pav/authoring/2.0/ 
+<a href='http://purl.org/pav/authoring/2.0/' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2Fauthoring%2F2.0%2F&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/backwardCompatibleWith___-2048317559.html" class='Annotation Property' title="http://www.w3.org/2002/07/owl#backwardCompatibleWith">owl:backwardCompatibleWith</a> http://purl.org/pav/provenance/2.0/ 
+<a href='http://purl.org/pav/provenance/2.0/' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2Fprovenance%2F2.0%2F&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/backwardCompatibleWith___-2048317559.html" class='Annotation Property' title="http://www.w3.org/2002/07/owl#backwardCompatibleWith">owl:backwardCompatibleWith</a> http://purl.org/pav/versioning/2.0/ 
+<a href='http://purl.org/pav/versioning/2.0/' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2Fversioning%2F2.0%2F&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/incompatibleWith___-1762442965.html" class='Annotation Property' title="http://www.w3.org/2002/07/owl#incompatibleWith">owl:incompatibleWith</a> http://swan.mindinformatics.org/ontologies/1.2/<b>pav.owl</b> 
+<a href='http://swan.mindinformatics.org/ontologies/1.2/pav.owl' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fswan.mindinformatics.org%2Fontologies%2F1.2%2Fpav.owl&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/priorVersion___-787984966.html" class='Annotation Property' title="http://www.w3.org/2002/07/owl#priorVersion">owl:priorVersion</a> http://purl.org/pav/2.2 
+<a href='http://purl.org/pav/2.2' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2F2.2&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/versionInfo___407301298.html" class='Annotation Property' title="http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a> <span class='literal'>"2.3.1"</span>(<a href="../datatypes/string___799955032.html" class='Datatype' title="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>)</li>
+<li class="asserted"><a href="../annotationproperties/has_provenance___-22140630.html" class='Annotation Property' title="http://www.w3.org/ns/prov#has_provenance">prov:has_provenance</a> http://purl.org/pav/<b>provenance.ttl</b> 
+<a href='http://purl.org/pav/provenance.ttl' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2Fprovenance.ttl&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/homepage___770139801.html" class='Annotation Property' title="http://xmlns.com/foaf/0.1/homepage">foaf:homepage</a> http://purl.org/pav/<b>home</b> 
+<a href='http://purl.org/pav/home' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2Fhome&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/isPrimaryTopicOf___1428916601.html" class='Annotation Property' title="http://xmlns.com/foaf/0.1/isPrimaryTopicOf">foaf:isPrimaryTopicOf</a> http://arxiv.org/abs/1304.7224 
+<a href='http://arxiv.org/abs/1304.7224' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Farxiv.org%2Fabs%2F1304.7224&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/isPrimaryTopicOf___1428916601.html" class='Annotation Property' title="http://xmlns.com/foaf/0.1/isPrimaryTopicOf">foaf:isPrimaryTopicOf</a> http://dx.doi.org/10.1186/2041-1480-4-37 
+<a href='http://dx.doi.org/10.1186/2041-1480-4-37' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='index.html?action=load&uri=http%3A%2F%2Fdx.doi.org%2F10.1186%2F2041-1480-4-37&redirect=pav___-473617998.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+</ul>
+</div>
+</div><!-- annotations (35) -->
+
+
+<div id='pav'>
+<h4>References</h4>
+<div class='codebox'>
+<ul>
+<li>
+<a href='../classes/index-pav.html' >Classes</a> (4)
+</li>
+<li>
+<a href='../objectproperties/index-pav.html' >Object Properties</a> (31)
+</li>
+<li>
+<a href='../dataproperties/index-pav.html' >Data Properties</a> (13)
+</li>
+<li>
+<a href='../annotationproperties/index-pav.html' >Annotation Properties</a> (25)
+</li>
+<li>
+<a href='../individuals/index-pav.html' >Individuals</a> (9)
+</li>
+<li>
+<a href='../datatypes/index-pav.html' >Datatypes</a> (5)
+</li>
+</ul>
+</div>
+</div><!-- pav -->
+
+</div> <!-- summary -->
+<p class='footer'>
+<a href='http://code.google.com/p/ontology-browser/' target='_blank'>OWL HTML inside</a>
+</p>
+</body>
+</html>
