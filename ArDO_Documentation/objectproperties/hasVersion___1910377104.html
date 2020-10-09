@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Ontology Browser</title>
+<meta http-equiv='content-type' content='text/html;charset=UTF-8'>
+<link rel='stylesheet' href='../css/default.css' type='text/css' />
+</head>
+
+<body>
+
+<div id='tabs'>
+<a href='../ontologies/index.html' class='' >Ontologies</a>
+<a href='../classes/index.html' class='' >Classes</a>
+<a href='index.html' class='' >Object Properties</a>
+<a href='../dataproperties/index.html' class='' >Data Properties</a>
+<a href='../annotationproperties/index.html' class='' >Annotation Properties</a>
+<a href='../individuals/index.html' class='' >Individuals</a>
+<a href='../datatypes/index.html' class='' >Datatypes</a>
+<a href='../cloud/' class='' >Clouds</a>
+</div> <!-- tabs -->
+
+
+<div class='summary'><h2>Object Property: hasVersion</h2>
+
+<div id='annotations_(5)'>
+<h4>Annotations (5)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="../annotationproperties/comment___1501100887.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> <span class='literal'>"This resource has a more specific, versioned resource.<br /><br />This property is intended for relating a non-versioned or abstract resource to several versioned resources, e.g. snapshots. For instance, if there are two snapshots of the News page, made on 23rd and 24th of December, then:<br /><br />    &lt;http://news.example.com/&gt; pav:hasVersion &lt;http://news.example.com/2013-12-23/&gt; ;<br />        pav:hasVersion &lt;http://news.example.com/2013-12-24/&gt; .<br /><br />If one of the versions has somewhat the equivalent content to this resource (e.g. can be used as a permalink for this resource), then it should instead be indicated with the subproperty pav:hasCurrentVersion:<br /><br />    &lt;http://news.example.com/&gt; pav:hasCurrentVersion &lt;http://news.example.com/2013-12-25/&gt; .<br /><br />To order the versions, use pav:previousVersion:<br /><br />    &lt;http://news.example.com/2013-12-25/&gt; pav:previousVersion &lt;http://news.example.com/2013-12-24/&gt; .<br />    &lt;http://news.example.com/2013-12-24/&gt; pav:previousVersion &lt;http://news.example.com/2013-12-23/&gt; .<br /><br />Note that it might be confusing to also indicate pav:previousVersion from a resource that has pav:hasVersion relations, as such a resource is intended to be a long-living "unversioned" resource. The PAV ontology does however not formally restrict this, to cater for more complex scenarios with multiple abstraction levels.<br /><br />pav:hasVersion is a subproperty of dcterms:hasVersion to more strongly define this hierarchical pattern. It is therefore also a subproperty of pav:generalizationOf (inverse of prov:specializationOf).<br /><br />To indicate the existence of other, non-hierarchical kind of editions and adaptations of this resource that are not versioned snapshots (e.g. Powerpoint slides has a video recording version), use instead dcterms:hasVersion or prov:alternateOf."</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/isDefinedBy___449337134.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a> http://purl.org/pav/ 
+<a href='http://purl.org/pav/' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a></li>
+<li class="asserted"><a href="../annotationproperties/label___653429740.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a> <span class='literal'>"Has version"</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/seeAlso___-1773693006.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a> http://purl.org/pav/<b>hasCurrentVersion</b> 
+<a href='http://purl.org/pav/hasCurrentVersion' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='../ontologies/index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2FhasCurrentVersion&redirect=..%2Fobjectproperties%2FhasVersion___1910377104.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/seeAlso___-1773693006.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a> http://purl.org/pav/<b>previousVersion</b> 
+<a href='http://purl.org/pav/previousVersion' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='../ontologies/index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2FpreviousVersion&redirect=..%2Fobjectproperties%2FhasVersion___1910377104.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+</ul>
+</div>
+</div><!-- annotations (5) -->
+
+
+<div id='superproperties_(2)'>
+<h4>Superproperties (2)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="hasVersion___270126958.html" class='Object Property' title="http://purl.org/dc/terms/hasVersion">dcterms:hasVersion</a></li>
+<li class="asserted"><a href="generalizationOf___-1931810377.html" class='Object Property' title="http://www.w3.org/ns/prov#generalizationOf">prov:generalizationOf</a></li>
+</ul>
+</div>
+</div><!-- superproperties (2) -->
+
+
+<div id='usage_(3)'>
+<h4>Usage (3)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="hasCurrentVersion___-116031477.html" class='Object Property' title="http://purl.org/pav/hasCurrentVersion">hasCurrentVersion</a> <span class='keyword'>&sube;</span> <span class='Object Property active-entity'>hasVersion</span></li>
+<li class="asserted"><span class='Object Property active-entity'>hasVersion</span> <span class='keyword'>&sube;</span> <a href="hasVersion___270126958.html" class='Object Property' title="http://purl.org/dc/terms/hasVersion">dcterms:hasVersion</a></li>
+<li class="asserted"><span class='Object Property active-entity'>hasVersion</span> <span class='keyword'>&sube;</span> <a href="generalizationOf___-1931810377.html" class='Object Property' title="http://www.w3.org/ns/prov#generalizationOf">prov:generalizationOf</a></li>
+</ul>
+</div>
+</div><!-- usage (3) -->
+
+</div> <!-- summary -->
+<p class='footer'>
+<a href='http://code.google.com/p/ontology-browser/' target='_blank'>OWL HTML inside</a>
+</p>
+</body>
+</html>

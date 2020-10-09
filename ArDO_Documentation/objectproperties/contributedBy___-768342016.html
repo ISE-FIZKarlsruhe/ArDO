@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Ontology Browser</title>
+<meta http-equiv='content-type' content='text/html;charset=UTF-8'>
+<link rel='stylesheet' href='../css/default.css' type='text/css' />
+</head>
+
+<body>
+
+<div id='tabs'>
+<a href='../ontologies/index.html' class='' >Ontologies</a>
+<a href='../classes/index.html' class='' >Classes</a>
+<a href='index.html' class='' >Object Properties</a>
+<a href='../dataproperties/index.html' class='' >Data Properties</a>
+<a href='../annotationproperties/index.html' class='' >Annotation Properties</a>
+<a href='../individuals/index.html' class='' >Individuals</a>
+<a href='../datatypes/index.html' class='' >Datatypes</a>
+<a href='../cloud/' class='' >Clouds</a>
+</div> <!-- tabs -->
+
+
+<div class='summary'><h2>Object Property: contributedBy</h2>
+
+<div id='annotations_(5)'>
+<h4>Annotations (5)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="../annotationproperties/comment___1501100887.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a> <span class='literal'>"The resource was contributed to by the given agent.<br /><br />Specifies an agent that provided any sort of help in conceiving the work that is expressed by the digital artifact.<br /><br />Contributions can take many forms, of which PAV define the subproperties pav:authoredBy and pav:curatedBy; however other specific roles could also be specified by pav:contributedBy or custom subproperties, such as illustrating, investigating or managing the underlying data source. Contributions can additionally be expressed in detail using prov:qualifiedAttribution and prov:hadRole.<br /><br />Note that pav:contributedBy identifies only agents that contributed to the work, knowledge or intellectual property, and not agents that made the digital artifact or representation (pav:createdBy), thus the considerations for software agents is similar to for pav:authoredBy and pav:curatedBy.<br /><br />pav:contributedBy is more specific than its superproperty dct:contributor - which might or might not be interpreted to also cover contributions to making the representation of the artifact.<br /><br /><br />The date of contribution can be expressed using pav:contributedOn - note however in the case of multiple contributors that there is no relationship in PAV identifying which agent contributed when or what. If capturing such lineage is desired, it should be additionally expressed using PROV relationships like prov:qualifiedAttribution or prov:wasGeneratedBy."</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/isDefinedBy___449337134.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a> http://purl.org/pav/ 
+<a href='http://purl.org/pav/' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a></li>
+<li class="asserted"><a href="../annotationproperties/label___653429740.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a> <span class='literal'>"Contributed by"</span> <span style='color: black;'>@en</span></li>
+<li class="asserted"><a href="../annotationproperties/seeAlso___-1773693006.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a> http://purl.org/pav/<b>contributedOn</b> 
+<a href='http://purl.org/pav/contributedOn' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='../ontologies/index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2FcontributedOn&redirect=..%2Fobjectproperties%2FcontributedBy___-768342016.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+<li class="asserted"><a href="../annotationproperties/seeAlso___-1773693006.html" class='Annotation Property' title="http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a> http://purl.org/pav/<b>createdBy</b> 
+<a href='http://purl.org/pav/createdBy' class='urlOption' target='_blank' ><img src="../images/external.png" title="Attempt to open link in another window" /></a> 
+<a href='../ontologies/index.html?action=load&uri=http%3A%2F%2Fpurl.org%2Fpav%2FcreatedBy&redirect=..%2Fobjectproperties%2FcontributedBy___-768342016.html' class='urlOption' ><img src="../images/download.png" title="Attempt to load owl/rdf" /></a></li>
+</ul>
+</div>
+</div><!-- annotations (5) -->
+
+
+<div id='superproperties_(2)'>
+<h4>Superproperties (2)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="contributor___285822827.html" class='Object Property' title="http://purl.org/dc/terms/contributor">dcterms:contributor</a></li>
+<li class="asserted"><a href="wasAttributedTo___1835578288.html" class='Object Property' title="http://www.w3.org/ns/prov#wasAttributedTo">prov:wasAttributedTo</a></li>
+</ul>
+</div>
+</div><!-- superproperties (2) -->
+
+
+<div id='usage_(4)'>
+<h4>Usage (4)</h4>
+<div class='codebox'>
+<ul>
+<li class="asserted"><a href="authoredBy___-1974470893.html" class='Object Property' title="http://purl.org/pav/authoredBy">authoredBy</a> <span class='keyword'>&sube;</span> <span class='Object Property active-entity'>contributedBy</span></li>
+<li class="asserted"><span class='Object Property active-entity'>contributedBy</span> <span class='keyword'>&sube;</span> <a href="contributor___285822827.html" class='Object Property' title="http://purl.org/dc/terms/contributor">dcterms:contributor</a></li>
+<li class="asserted"><span class='Object Property active-entity'>contributedBy</span> <span class='keyword'>&sube;</span> <a href="wasAttributedTo___1835578288.html" class='Object Property' title="http://www.w3.org/ns/prov#wasAttributedTo">prov:wasAttributedTo</a></li>
+<li class="asserted"><a href="curatedBy___-289136645.html" class='Object Property' title="http://purl.org/pav/curatedBy">curatedBy</a> <span class='keyword'>&sube;</span> <span class='Object Property active-entity'>contributedBy</span></li>
+</ul>
+</div>
+</div><!-- usage (4) -->
+
+</div> <!-- summary -->
+<p class='footer'>
+<a href='http://code.google.com/p/ontology-browser/' target='_blank'>OWL HTML inside</a>
+</p>
+</body>
+</html>
