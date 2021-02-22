@@ -1,0 +1,22 @@
+[
+  {
+    "": "<http://vocab.archivportal-d.de/00002#0983>",
+    "__1": "Bild 4",
+    "__2": "<https://www2.landesarchiv-bw.de/ofs21/bild_zoom/zoom.php?bestand=4209&id=65708&gewaehlteSeite=01_0000074838_0003_1-74838-3.jpg&ausgangspunkt=thumbnails&groesseThumbnails=400&thumbnailsProSeite=10&screenbreite=1920&screenhoehe=1053>"
+  },
+  {
+    "": "<http://vocab.archivportal-d.de/00002#0984>",
+    "__1": "Bild 3",
+    "__2": "<https://www2.landesarchiv-bw.de/ofs21/bild_zoom/zoom.php?bestand=4209&id=65698&gewaehlteSeite=01_0000074827_0001_1-74827-1.jpg&ausgangspunkt=thumbnails&groesseThumbnails=400&thumbnailsProSeite=10&screenbreite=2560&screenhoehe=1440>"
+  },
+  {
+    "": "<http://vocab.archivportal-d.de/00002#0987>",
+    "__1": "Bild 1",
+    "__2": "<https://www2.landesarchiv-bw.de/ofs21/bild_zoom/zoom.php?bestand=4209&id=65708&gewaehlteSeite=01_0000074838_0005_1-74838-5.jpg&ausgangspunkt=thumbnails&groesseThumbnails=400&thumbnailsProSeite=10&screenbreite=1920&screenhoehe=1053>"
+  },
+  {
+    "": "<http://vocab.archivportal-d.de/00002#0988>",
+    "__1": "Bild 2",
+    "__2": "<https://www2.landesarchiv-bw.de/ofs21/bild_zoom/zoom.php?bestand=4209&id=65708&gewaehlteSeite=01_0000074838_0008_1-74838-8.jpg&ausgangspunkt=thumbnails&groesseThumbnails=400&thumbnailsProSeite=10&screenbreite=1920&screenhoehe=1053>"
+  }
+]
