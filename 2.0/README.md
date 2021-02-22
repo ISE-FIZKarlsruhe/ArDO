@@ -20,9 +20,9 @@ The directory *CQs/* contains the list of the competency questions and the corre
 
 For any additional info please contact: 
 
-[Oleksandra Bruns](oleksandra.bruns@fiz-karlsruhe.de)
+[Oleksandra Bruns](mailto:oleksandra.bruns@fiz-karlsruhe.de)
 
-[Danilo Dessì](danilo.dessi@fiz-karlsruhe.de)
+[Danilo Dessì](mailto:danilo.dessi@fiz-karlsruhe.de)
 
 [FIZ-Karlsruhe - ISE Team](https://www.fiz-karlsruhe.de/en/forschung/information-service-engineering#staff)
 
