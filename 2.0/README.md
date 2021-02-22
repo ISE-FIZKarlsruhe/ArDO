@@ -24,7 +24,6 @@ For any additional info please contact:
 
 [Danilo Dessì](mailto:danilo.dessi@fiz-karlsruhe.de)
 
-
 [FIZ-Karlsruhe - ISE Team](https://www.fiz-karlsruhe.de/en/forschung/information-service-engineering#staff)
 
 ## Acknowledgement

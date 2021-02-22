@@ -1,0 +1,215 @@
+CQ1: Given a resource with title X ("Bd. 2"), which other archival resources does it belong to?
+
+PREFIX ardo: <w3id.org/ardo/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+SELECT ?titleContext
+WHERE {?contextID ardo:consists_of ?recordID	.
+       ?recordID dc:title "Bd. 2"	.
+       ?contextID dc:title ?titleContext	.
+       }
+
+CQ2: What are the titles of records labeled with keyword X ("Betriebsrat"/K143)?
+
+PREFIX ardo: <w3id.org/ardo/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+SELECT ?title ?keyword_label
+
+WHERE {?doc dc:title ?title	;
+            ardo:tagged_with ardo:K143	.
+       ardo:K143 rdfs:label ?keyword_label	.
+       }
+
+CQ3: Which images are linked to a text document with title X ("Bd. 5")?
+
+
+PREFIX ardo: <w3id.org/ardo/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+SELECT ?imageID ?imageTitle ?link
+
+WHERE {?document dc:title "Bd. 5" ;
+                 ardo:provides_multimedia ?imageID	.
+       ?imageID dc:title ?imageTitle	;
+              ?findsystem ?link	.
+  
+
+
+CQ4: Which text documents are linked to an image with the title X ("Bild 1")?
+
+PREFIX ardo: <w3id.org/ardo/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+SELECT ?docTitle 
+
+WHERE {?image dc:title "Bild 1" ;
+                 ardo:multimedia_of ?document	.
+       ?document dc:title ?docTitle	.
+  }
+
+
+
+
+
+CQ5: What locations are associated to the archival resource X ("Bd. 2")?
+
+PREFIX ardo: <w3id.org/ardo/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+SELECT ?title ?locationPhys ?locationWeb
+
+WHERE {?doc dc:title "Bd. 2" ;
+       		dc:title ?title ;
+            ardo:located_in ?locationPh	;
+            ardo:findsystem ?locationWeb	.
+       ?locationPh rdfs:label ?locationPhys	.
+       }
+
+CQ6: What is the definition of keyword X ("Dewes-Plan"/K209)?
+
+PREFIX ardo: <w3id.org/ardo/>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?keyword ?description
+
+WHERE {ardo:K209 owl:sameAs ?wd_keyword	;
+      rdfs:label ?keyword	.
+      SERVICE <https://query.wikidata.org/sparql> {
+        ?wd_keyword schema:description ?description
+                    FILTER (LANG(?description) ="en")	.
+        }
+      }
+           
+
+CQ7: What is the description of location X ("Deutsches Reich"/K18)?
+
+PREFIX ardo: <w3id.org/ardo/>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?keyword ?description
+
+WHERE {ardo:K18 owl:sameAs ?wd_keyword	;
+      rdfs:label ?keyword	.
+      SERVICE <https://query.wikidata.org/sparql> {
+        ?wd_keyword schema:description ?description
+                    FILTER (LANG(?description) ="en")	.
+        }
+      }
+
+CQ8: Are all keywords used to label document X ("Bd. 2") still valid under the latest version of systematics?
+
+PREFIX ardo: <w3id.org/ardo/>
+PREFIX pav: <http://purl.org/pav/2.3#>
+
+SELECT ?keyword_l ?version_l ?currentVersion_l
+
+WHERE {?currentVersion rdfs:comment "current version"@en	;
+                       rdfs:label ?currentVersion_l	.
+       ?doc ardo:title "Bd. 2"	;
+            ardo:tagged_with ?keyword	.
+       ?keyword pav:hasVersion ?version	;
+                rdfs:label ?keyword_l	.
+       ?version rdfs:label ?version_l
+       }
+
+CQ9: What keywords are associated with category X ("Soziale Probleme und Konflikte"/S32) in different existing versions of the systematics?
+
+PREFIX ardo: <w3id.org/ardo/>
+PREFIX pav: <http://purl.org/pav/2.3#>
+
+SELECT  ?category_l ?keyword_l ?versionCat_l
+
+WHERE {?keyword ardo:is_keyword_of ardo:S32	;
+                 rdfs:label ?keyword_l	;
+                 pav:hasVersion ?versionKeyword	.
+       
+       ?versionKeyword rdfs:label ?versionK_l	.
+       
+       
+       ardo:S32 rdfs:label ?category_l ;
+                                 pav:hasVersion ?versionCategory .
+       
+       ?versionCategory rdfs:label ?versionCat_l	.
+       
+      FILTER (?versionCat_l = ?versionK_l)
+       
+       }
+
+CQ10: What keywords have been added to the latest version of the systematics?
+
+
+PREFIX ardo: <w3id.org/ardo/>
+PREFIX pav: <http://purl.org/pav/2.3#>
+
+SELECT ?keyword_l ?version_l
+
+WHERE {?currentVersion rdfs:comment "current version"@en	;.
+       ?keyword pav:hasVersion ?version	;
+       rdfs:label ?keyword_l	.
+       
+       ?version rdfs:label ?version_l
+       
+       FILTER (?version = ?currentVersion)       
+       
+       }
+
+
+CQ11: What keywords belonged to subcategory X ("Reichsheer"/S12) according to systematics Y ("0.9")?
+
+PREFIX ardo: <w3id.org/ardo/>
+PREFIX pav: <http://purl.org/pav/2.3#>
+
+SELECT ?keyword_l ?subcategory_l ?version_l
+
+WHERE {?keyword pav:hasVersion ardo:version09	;
+       			rdfs:label ?keyword_l	;
+                ardo:is_keyword_of ardo:S12	.
+       
+       ardo:version09 rdfs:label ?version_l	.
+       
+       ardo:S12 rdfs:label ?subcategory_l	.
+                                   
+       }
+
+CQ12: What categories belonged to every existing version of the systematics?
+
+PREFIX ardo: <w3id.org/ardo/>
+PREFIX pav: <http://purl.org/pav/2.3#>
+
+SELECT ?category_l
+
+WHERE {?category rdf:type ardo:Category ;
+                 rdfs:label ?category_l	;
+                 pav:hasVersion ardo:version09	;
+                 pav:hasVersion ardo:version10	;
+                 pav:hasVersion ardo:version110	.
+       
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
