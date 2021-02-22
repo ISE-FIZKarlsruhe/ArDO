@@ -17,18 +17,19 @@
 @base <w3id.org/ardo/2.0/> .
 
 <w3id.org/ardo/2.0/> rdf:type owl:Ontology ;
-                     owl:imports <http://www.w3.org/2002/07/owl#> ,
-                                 <http://www.w3.org/2000/01/rdf-schema#> ,
-                                 <http://www.w3.org/2004/02/skos/core#> ,
-                                 <http://xmlns.com/foaf/0.1/> , 
-                                 <http://purl.org/ontology/bibo/> ,
+                     owl:imports bibo: ,
                                  <http://purl.org/pav/2.3> ,
                                  <http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf> ,
-                                 <http://www.w3.org/ns/prov#> ,
-                                 <http://purl.org/dc/terms/> ,
-                                 <http://purl.org/dc/elements/1.1/> ,
-                                 <http://www.w3.org/ns/oa#> ;
-                   rdfs:label "ArDO"@en .
+                                 oa: ;
+                   rdfs:label "ArDO - The Archive Dynamics Ontology"@en ;
+                   terms:creator  "Oleksandra Bruns" ,
+                                  "Tabea Tietz" ,
+                                  "Fabian Hoppe" ,
+                                  "Mirjam Sprau" ,
+                                  "Nils Meyer" ,
+                                  "Danilo Dessi'" ,
+                                  "Harald Sack" ;
+                  owl:versionIRI <w3id.org/ardo/2.0/> .
 
 #################################################################
 #    Annotation properties

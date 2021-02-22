@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ArDO - The Archive Dynamics Ontology</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "w3id.org/ardo/2.0/",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "ArDO - The Archive Dynamics Ontology"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.8.5</span>
+  </div>
+  <h1>ArDO - The Archive Dynamics Ontology</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>URI</dt>
+        <dd><code>https://w3id.org/ardo/2.0/</code></dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dd>
+            Oleksandra Bruns<br/>
+            Tabea Tietz<br/>
+            Fabian Hoppe<br/>
+            Mirjam Sprau<br/>
+            Nils Meyer<br/>
+            Danilo Dessi'<br/>
+            Harald Sack<br/>
+            
+            
+        </dd>
+        <dt>Version URI</dt>
+        <dd><a href="https://w3id.org/ardo/2.0/">https://w3id.org/ardo/2.0/</a></dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="https://github.com/ISE-FIZKarlsruhe/ArDO/2.0/ArDO.ttl">RDF (turtle)</a></dd>
+    </dl>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
+        <li><a href="#annotationproperties">Annotation Properties</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#Annotation">Annotation</a></li>
+        <li><a href="#ArchivalPhotos">Archival Photos</a></li>
+        <li><a href="#Archive">Archive</a></li>
+        <li><a href="#AudioRecord">Audio Record</a></li>
+        <li><a href="#AudioVisualDocument">AudioVisualDocument</a></li>
+        <li><a href="#Bestand">Bestand</a></li>
+        <li><a href="#Film">Film</a></li>
+        <li><a href="#Gliederung">Gliederung</a></li>
+        <li><a href="#Image">Image</a></li>
+        <li><a href="#Keyword">Keyword</a></li>
+        <li><a href="#Person">Person</a></li>
+        <li><a href="#Record">Record</a></li>
+        <li><a href="#RecordProvenance">Record Provenance</a></li>
+        <li><a href="#Scans">Scans</a></li>
+        <li><a href="#Serie">Serie</a></li>
+        <li><a href="#Signature">Signature</a></li>
+        <li><a href="#SignatureofArchive">Signature of Archive</a></li>
+        <li><a href="#SignatureofDossier">Signature of Dossier</a></li>
+        <li><a href="#SignatureofPortfolio">Signature of Portfolio</a></li>
+        <li><a href="#Portfolio_Signature">Signature of Portfolio</a></li>
+        <li><a href="#Subcategory">Subcategory</a></li>
+        <li><a href="#Systematics">Systematics</a></li>
+        <li><a href="#ThelinktotheSearchBox">The link to the Search Box</a></li>
+        <li><a href="#Video">Video</a></li>
+        <li><a href="#Vorgang">Vorgang</a></li>
+    </ul>
+    <div class="entity class" id="ArchivalPhotos">
+        <h3>Archival Photos<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Archival_Photo</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>This class represents links to photos contained in  archival records.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://purl.org/ontology/bibo/Image">bibo:Image</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Archive">
+        <h3>Archive<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Archive</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents the smallest unit of archival records.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SignatureofArchive">
+        <h3>Signature of Archive<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Archive_Signature</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents the location of archival documents in the archive.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Signature">ardo:Signature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="AudioRecord">
+        <h3>Audio Record<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Audio</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class contains audio files related to archival textual resources.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://purl.org/ontology/bibo/AudioVisualDocument">bibo:AudioVisualDocument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SignatureofPortfolio">
+        <h3>Signature of Portfolio<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Category</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents the upper thematic category of archival documents.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/has_subcategory">ardo:has_subcategory</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/is_subcategory_of">ardo:is_subcategory_of</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Gliederung">
+        <h3>Gliederung<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Chapter</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents the division of a whole portfolio of archival documents into several thematic parts.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Vorgang">
+        <h3>Vorgang<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Dossier</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents the smallest unit of an administrative measure and the resulting document.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SignatureofDossier">
+        <h3>Signature of Dossier<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Dossier_Signature</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Signature">ardo:Signature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Film">
+        <h3>Film<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Film</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represent an archival documentary film that is used as additional information for archival textual document.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://purl.org/ontology/bibo/AudioVisualDocument">bibo:AudioVisualDocument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Keyword">
+        <h3>Keyword<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Keyword</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents tags/keywords asocciated with archival documents.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/is_keyword_of">ardo:is_keyword_of</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/tag_of">ardo:tag_of</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/has_keyword">ardo:has_keyword</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/tagged_with">ardo:tagged_with</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Bestand">
+        <h3>Bestand<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Portfolio</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents the collection of archives from a provenance in a logical, hierarchically higher unit.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/material">ardo:material</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/language">ardo:language</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/introduction">ardo:introduction</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/size">ardo:size</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/number_of_samples">ardo:number_of_samples</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Portfolio_Signature">
+        <h3>Signature of Portfolio<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Portfolio_Signature</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents the location of portfolios in the archive.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Signature">ardo:Signature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Record">
+        <h3>Record<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Record</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents archival sources and documents about Weimar
+Republic (1918-1929).</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Archive">ardo:Archive</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/Chapter">ardo:Chapter</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/Volume">ardo:Volume</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/Portfolio">ardo:Portfolio</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/Dossier">ardo:Dossier</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/located_in">ardo:located_in</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/has_record_provenance">ardo:has_record_provenance</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/consists_of">ardo:consists_of</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/belongs_to">ardo:belongs_to</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/findsystem">ardo:findsystem</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/consists_of">ardo:consists_of</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/location_of">ardo:location_of</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/is_record_provenance">ardo:is_record_provenance</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/belongs_to">ardo:belongs_to</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="RecordProvenance">
+        <h3>Record Provenance<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Record_Provenance</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents places of origin of the archival records.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/is_record_provenance">ardo:is_record_provenance</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/has_record_provenance">ardo:has_record_provenance</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Scans">
+        <h3>Scans<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Scan</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>This class represents links to scans of archival records.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://purl.org/ontology/bibo/Image">bibo:Image</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ThelinktotheSearchBox">
+        <h3>The link to the Search Box<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Search_box_link</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents the links to the archival document.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/findsystem">ardo:findsystem</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Signature">
+        <h3>Signature<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Signature</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents the physical location of the archival documents.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Archive_Signature">ardo:Archive_Signature</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/Portfolio_Signature">ardo:Portfolio_Signature</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/Dossier_Signature">ardo:Dossier_Signature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/location_of">ardo:location_of</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/located_in">ardo:located_in</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Subcategory">
+        <h3>Subcategory<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Subcategory</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents thematic subcategories of the archival documents.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/is_subcategory_of">ardo:is_subcategory_of</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/has_keyword">ardo:has_keyword</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/is_keyword_of">ardo:is_keyword_of</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/has_subcategory">ardo:has_subcategory</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Systematics">
+        <h3>Systematics<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Systematics</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Systematics</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Video">
+        <h3>Video<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Video</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represent amateur video files related to textual archival resources.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://purl.org/ontology/bibo/AudioVisualDocument">bibo:AudioVisualDocument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Serie">
+        <h3>Serie<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/Volume</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents numerical or chronological sequence of archival documents.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="AudioVisualDocument">
+        <h3>AudioVisualDocument<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/ontology/bibo/AudioVisualDocument</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Audio">ardo:Audio</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/Film">ardo:Film</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/Video">ardo:Video</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Image">
+        <h3>Image<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/ontology/bibo/Image</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Scan">ardo:Scan</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/ardo/2.0/Archival_Photo">ardo:Archival_Photo</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Annotation">
+        <h3>Annotation<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/oa#Annotation</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Person">
+        <h3>Person<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/Person</code></td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/mentioned_in">ardo:mentioned_in</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/mentions">ardo:mentions</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#belongsto">belongs to</a></li>
+        <li><a href="#consistsof">consists of</a></li>
+        <li><a href="#findsystem">findsystem</a></li>
+        <li><a href="#haskeyword">has keyword</a></li>
+        <li><a href="#hasrecordprovenance">has record provenance</a></li>
+        <li><a href="#hassubcategory">has subcategory</a></li>
+        <li><a href="#iskeywordof">is keyword of</a></li>
+        <li><a href="#isrecordprovenanceof">is record provenance of</a></li>
+        <li><a href="#issubcategoryof">is subcategory of</a></li>
+        <li><a href="#locatedin">located in</a></li>
+        <li><a href="#locationof">location of</a></li>
+        <li><a href="#mentionedin">mentioned in</a></li>
+        <li><a href="#mentions">mentions</a></li>
+        <li><a href="#multimediaof">multimedia of</a></li>
+        <li><a href="#providesmultimedia">provides multimedia</a></li>
+        <li><a href="#tagof">tag of</a></li>
+        <li><a href="#taggedwith">tagged with</a></li>
+        <li><a href="#hasVersion">hasVersion</a></li>
+        <li><a href="#previousVersion">previousVersion</a></li>
+    </ul>
+    <div class="entity property" id="belongsto">
+        <h3>belongs to<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/belongs_to</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a hierarchichal structure of smaller record units to the higher record documents. This is the inverse property of "consists of"
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/consists_of">ardo:consists_of</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="consistsof">
+        <h3>consists of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/consists_of</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a hierarchichal structure of higher archival documents to smaller record units. This is the inverse property of "belongs to"
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="findsystem">
+        <h3>findsystem<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/findsystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a record to the link to its digital copies.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Search_box_link">ardo:Search_box_link</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="haskeyword">
+        <h3>has keyword<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/has_keyword</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a thematic subcategory to a keyword associated with this subcategory. This is the inverse property of "is keyword of".
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/is_keyword_of">ardo:is_keyword_of</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Subcategory">ardo:Subcategory</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Keyword">ardo:Keyword</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasrecordprovenance">
+        <h3>has record provenance<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/has_record_provenance</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a record document to its place of origin. This is the inverse property of "is record provenance".
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/is_record_provenance">ardo:is_record_provenance</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record_Provenance">ardo:Record_Provenance</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hassubcategory">
+        <h3>has subcategory<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/has_subcategory</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates an upper category of the systematic to its subcategory. This is the inverse property of "is subcategory of"
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/is_subcategory_of">ardo:is_subcategory_of</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Category">ardo:Category</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Subcategory">ardo:Subcategory</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="iskeywordof">
+        <h3>is keyword of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/is_keyword_of</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a tag/keyword to the thematic subcategory it belongs to. This is the inverse property of "has keyword".
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Keyword">ardo:Keyword</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Subcategory">ardo:Subcategory</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="isrecordprovenanceof">
+        <h3>is record provenance of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/is_record_provenance</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a place of origin of the doucment to the record ID. This is the inverse property of  "has record provenance".
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record_Provenance">ardo:Record_Provenance</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="issubcategoryof">
+        <h3>is subcategory of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/is_subcategory_of</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a thematic subcategory to an upper category it belongs to. This is the inverse property of "has subcategory"
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Subcategory">ardo:Subcategory</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Category">ardo:Category</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="locatedin">
+        <h3>located in<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/located_in</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a record id to the physical location of the record document. This is the inverse property of "location of".
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/location_of">ardo:location_of</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Signature">ardo:Signature</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="locationof">
+        <h3>location of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/location_of</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates the location of the physical document to its ID. This is the inverse property of "located in".
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Signature">ardo:Signature</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Record">ardo:Record</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="mentionedin">
+        <h3>mentioned in<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/mentioned_in</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a person to the record he/she was mentioned in
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/mentions">ardo:mentions</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Archive">ardo:Archive</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/ardo/2.0/Dossier">ardo:Dossier</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="mentions">
+        <h3>mentions<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/mentions</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a record to the person mentioned in it. This is the inverse property of "mentioned in"
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://w3id.org/ardo/2.0/Archive">ardo:Archive</a><sup class="sup-c" title="class">c</sup> or <a href="https://w3id.org/ardo/2.0/Dossier">ardo:Dossier</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="multimediaof">
+        <h3>multimedia of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/multimedia_of</code></td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/provides_multimedia">ardo:provides_multimedia</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="providesmultimedia">
+        <h3>provides multimedia<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/provides_multimedia</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a text resource to an archival multimedia resource that belongs to a textual archive.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://w3id.org/ardo/2.0/Archive">ardo:Archive</a><sup class="sup-c" title="class">c</sup> or <a href="https://w3id.org/ardo/2.0/Dossier">ardo:Dossier</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Archival_Photo">ardo:Archival_Photo</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/ardo/2.0/Audio">ardo:Audio</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/ardo/2.0/Film">ardo:Film</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/ardo/2.0/Scan">ardo:Scan</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/ardo/2.0/Video">ardo:Video</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="tagof">
+        <h3>tag of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/tag_of</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a tag/keyword to a document. This is the inverse property of "tagged with"
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/tagged_with">ardo:tagged_with</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Keyword">ardo:Keyword</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Archive">ardo:Archive</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/ardo/2.0/Dossier">ardo:Dossier</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="taggedwith">
+        <h3>tagged with<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/tagged_with</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    This property relates a document to a keyword/tag it was marked with. This is the inverse property of "tag of"
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://w3id.org/ardo/2.0/Archive">ardo:Archive</a><sup class="sup-c" title="class">c</sup> or <a href="https://w3id.org/ardo/2.0/Dossier">ardo:Dossier</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Keyword">ardo:Keyword</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasVersion">
+        <h3>hasVersion<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/pav/2.3#hasVersion</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="previousVersion">
+        <h3>previousVersion<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/pav/2.3#previousVersion</code></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#archvaltype">archval type</a></li>
+        <li><a href="#contains">contains</a></li>
+        <li><a href="#describestimeperiod">describes timeperiod</a></li>
+        <li><a href="#introduction">introduction</a></li>
+        <li><a href="#language">language</a></li>
+        <li><a href="#material">material</a></li>
+        <li><a href="#numberofsamples">number of samples</a></li>
+        <li><a href="#size">size</a></li>
+        <li><a href="#typeofmedia">type of media</a></li>
+        <li><a href="#title">title</a></li>
+    </ul>
+    <div class="entity property" id="archvaltype">
+        <h3>archval type<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/archival_type</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    This property relates a record document to its archival type
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://w3id.org/ardo/2.0/Archive">ardo:Archive</a><sup class="sup-c" title="class">c</sup> or <a href="https://w3id.org/ardo/2.0/Dossier">ardo:Dossier</a><sup class="sup-c" title="class">c</sup> or <a href="https://w3id.org/ardo/2.0/Portfolio">ardo:Portfolio</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="contains">
+        <h3>contains<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/contains</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    This property relates a document to additional data it may contain.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://w3id.org/ardo/2.0/Archive">ardo:Archive</a><sup class="sup-c" title="class">c</sup> or <a href="https://w3id.org/ardo/2.0/Dossier">ardo:Dossier</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="describestimeperiod">
+        <h3>describes timeperiod<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/describes_timeperiod</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    This property relates a document to a time period it describes.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://w3id.org/ardo/2.0/Archive">ardo:Archive</a><sup class="sup-c" title="class">c</sup> or <a href="https://w3id.org/ardo/2.0/Dossier">ardo:Dossier</a><sup class="sup-c" title="class">c</sup> or <a href="https://w3id.org/ardo/2.0/Portfolio">ardo:Portfolio</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="introduction">
+        <h3>introduction<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/introduction</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    This property relates a portdolio to its introduction part.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Portfolio">ardo:Portfolio</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="language">
+        <h3>language<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/language</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    This property relates a document to the language it is written in.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Portfolio">ardo:Portfolio</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#language">xsd:language</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="material">
+        <h3>material<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/material</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    This property describes the material a portfolio was made of.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Portfolio">ardo:Portfolio</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="numberofsamples">
+        <h3>number of samples<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/number_of_samples</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    This property defines a number of portfolio samples in an archive.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Portfolio">ardo:Portfolio</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="size">
+        <h3>size<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/size</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    This property defines the physical size of a portfolio.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/ardo/2.0/Portfolio">ardo:Portfolio</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="typeofmedia">
+        <h3>type of media<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/type_of_media</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    This property defines the type of media of a document.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://w3id.org/ardo/2.0/Archive">ardo:Archive</a><sup class="sup-c" title="class">c</sup> or <a href="https://w3id.org/ardo/2.0/Dossier">ardo:Dossier</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="title">
+        <h3>title<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/elements/1.1/title</code></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="annotationproperties">
+    <h2>Annotation Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#derived_on">derived_on</a></li>
+        <li><a href="#contributor">contributor</a></li>
+        <li><a href="#created">created</a></li>
+        <li><a href="#creator">creator</a></li>
+        <li><a href="#object">object</a></li>
+        <li><a href="#predicate">predicate</a></li>
+        <li><a href="#subject">subject</a></li>
+        <li><a href="#sameAs">sameAs</a></li>
+        <li><a href="#broader">broader</a></li>
+        <li><a href="#closeMatch">closeMatch</a></li>
+        <li><a href="#narrower">narrower</a></li>
+        <li><a href="#related">related</a></li>
+        <li><a href="#hasBody">hasBody</a></li>
+        <li><a href="#hasTarget">hasTarget</a></li>
+    </ul>
+    <div class="entity property" id="derived_on">
+        <h3>derived_on<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/ardo/2.0/derived_on</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="contributor">
+        <h3>contributor<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/elements/1.1/contributor</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="created">
+        <h3>created<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/created</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="creator">
+        <h3>creator<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/creator</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="object">
+        <h3>object<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#object</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="predicate">
+        <h3>predicate<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="subject">
+        <h3>subject<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#subject</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="sameAs">
+        <h3>sameAs<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2002/07/owl#sameAs</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="broader">
+        <h3>broader<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2004/02/skos/core#broader</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="closeMatch">
+        <h3>closeMatch<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2004/02/skos/core#closeMatch</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="narrower">
+        <h3>narrower<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2004/02/skos/core#narrower</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="related">
+        <h3>related<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2004/02/skos/core#related</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasBody">
+        <h3>hasBody<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/oa#hasBody</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasTarget">
+        <h3>hasTarget<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/oa#hasTarget</code></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+  
+  <section id="namedindividuals">
+    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+    </ul>
+</section>
+  
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>ardo</dt>
+        <dd><code>https://w3id.org/ardo/2.0/</code></dd>
+        <dt>bibo</dt>
+        <dd><code>http://purl.org/ontology/bibo/</code></dd>
+        <dt>dc</dt>
+        <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
+        <dt>foaf</dt>
+        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
+        <dt>oa</dt>
+        <dd><code>http://www.w3.org/ns/oa#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>pav</dt>
+        <dd><code>http://purl.org/pav/2.3#</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>terms</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>
