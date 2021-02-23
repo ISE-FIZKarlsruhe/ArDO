@@ -10,6 +10,8 @@ This work is described in:
 Vsesviatska, O., Tietz, T., Hoppe, F., Sprau, M., Meyer, N., Dessì, D., & Sack, H. (2021). ArDO: An Ontology to Describe the Dynamics of Multimedia Archival Records. In: Proceedings of the 36th ACM/SIGAPP Symposium On Applied Computing (ACM SAC 2021), (pp. 1855-1863). 
 ```
 
+Bibtex:
+
 ```
 @inproceedings{vsesviatska2021,
   title={ArDO: An Ontology to Describe the Dynamics of Multimedia Archival Records},
