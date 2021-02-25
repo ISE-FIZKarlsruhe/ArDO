@@ -6,9 +6,8 @@ This repository contains ArDO - The Archive Dynamics Ontology - an ontology that
 
 This work is described in:
 
-```
 Vsesviatska, O., Tietz, T., Hoppe, F., Sprau, M., Meyer, N., Dessì, D., & Sack, H. (2021). ArDO: An Ontology to Describe the Dynamics of Multimedia Archival Records. In: Proceedings of the 36th ACM/SIGAPP Symposium On Applied Computing (ACM SAC 2021), (pp. 1855-1863). 
-```
+
 
 Bibtex:
 
@@ -42,7 +41,7 @@ For any additional info please contact:
 
 ## Acknowledgement
 
-This work has been supported by a public grant overseen by the Deutsche Forschungsgemeinschaft (DFG) for the project “Aufbau einer Infrastruktur zur Implementierung sachthematis-cher Zugänge im Archivportal-D am Beispiel des Themenkom-plexes Weimarer Republik (Projektphase 2)" with grant num-ber 396707386 in the DFG LIS programme (WissenschaftlicheLiteraturversorgungs - und Informationssysteme).
+This work has been supported by a public grant overseen by the Deutsche Forschungsgemeinschaft (DFG) for the project “Aufbau einer Infrastruktur zur Implementierung [sachthematischer Zugänge im Archivportal-D am Beispiel des Themenkomplexes Weimarer Republik](https://www.archivportal-d.de/themenportale/weimarer-republik) (Projektphase 2)" with grant number 396707386 in the DFG LIS programme (WissenschaftlicheLiteraturversorgungs - und Informationssysteme).
 
 ## Updates
 
