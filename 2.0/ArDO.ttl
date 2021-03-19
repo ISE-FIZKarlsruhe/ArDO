@@ -127,7 +127,7 @@ ardo:consists_of rdf:type owl:ObjectProperty ,
 ###  w3id.org/ardo/2.0/findsystem
 ardo:findsystem rdf:type owl:ObjectProperty ;
                 rdfs:domain ardo:Record ;
-                rdfs:range ardo:Search_box_link ;
+                rdfs:range ardo:Search_Link ;
                 rdfs:comment "The property relates a record to the link to its digital copies."@en ;
                 rdfs:label "findsystem"@en .
 
@@ -405,7 +405,7 @@ ardo:Archive rdf:type owl:Class ;
 ardo:Archive_Signature rdf:type owl:Class ;
                        rdfs:subClassOf ardo:Signature ;
                        rdfs:comment "The class represents the location of archival documents in the archive."@en ;
-                       rdfs:label "Signature of Archive"@en .
+                       rdfs:label "Archive Signature"@en .
 
 
 ###  w3id.org/ardo/2.0/Audio
@@ -418,7 +418,7 @@ ardo:Audio rdf:type owl:Class ;
 ###  w3id.org/ardo/2.0/Category
 ardo:Category rdf:type owl:Class ;
               rdfs:comment "The class represents the upper thematic category of archival documents."@en ;
-              rdfs:label "Signature of Portfolio"@en .
+              rdfs:label "Portfolio Signature"@en .
 
 
 ###  w3id.org/ardo/2.0/Chapter
@@ -440,7 +440,7 @@ ardo:Dossier rdf:type owl:Class ;
 ###  w3id.org/ardo/2.0/Dossier_Signature
 ardo:Dossier_Signature rdf:type owl:Class ;
                        rdfs:subClassOf ardo:Signature ;
-                       rdfs:label "Signature of Dossier"@en .
+                       rdfs:label "Dossier Signature"@en .
 
 
 ###  w3id.org/ardo/2.0/Film
@@ -468,7 +468,7 @@ ardo:Portfolio rdf:type owl:Class ;
 ardo:Portfolio_Signature rdf:type owl:Class ;
                          rdfs:subClassOf ardo:Signature ;
                          rdfs:comment "The class represents the location of portfolios in the archive."@en ;
-                         rdfs:label "Signature of Portfolio"@en .
+                         rdfs:label "Portfolio Signature"@en .
 
 
 ###  w3id.org/ardo/2.0/Record
@@ -491,10 +491,10 @@ ardo:Scan rdf:type owl:Class ;
           rdfs:label "Scans"@en .
 
 
-###  w3id.org/ardo/2.0/Search_box_link
-ardo:Search_box_link rdf:type owl:Class ;
+###  w3id.org/ardo/2.0/Search_Link
+ardo:Search_Link rdf:type owl:Class ;
                      rdfs:comment "The class represents the links to the archival document."@en ;
-                     rdfs:label "The link to the Search Box"@en .
+                     rdfs:label "Search Link"@en .
 
 
 ###  w3id.org/ardo/2.0/Signature
